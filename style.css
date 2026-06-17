@@ -383,7 +383,7 @@ h1.glitch-title {
     height: 8px;
     border-radius: 4px;
     overflow: hidden;
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(56, 139, 253, 0.15);
 }
 
 .progress-fill {
@@ -446,7 +446,7 @@ h1.glitch-title {
 /* MOBIILILAITTEET (TABLETIT JA PUHELIMET) */
 @media (max-width: 850px) {
     .dashboard-grid {
-        grid-template-columns: 1fr; /* Muutetaan yhdeksi sarakkeeksi */
+        grid-template-columns: 1fr; /* Muutetaan yhdeksi sarakkeeksi mobiilissa */
     }
     
     .wide-card, .tall-card {
@@ -463,4 +463,5 @@ h1.glitch-title {
         justify-content: center;
         gap: 1rem;
     }
+}
 }
