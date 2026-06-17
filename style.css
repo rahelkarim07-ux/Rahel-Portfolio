@@ -1,0 +1,466 @@
+/* ==========================================================================
+   1. CYBERPUNK VARIABLES & THEME DEFINITION
+   ========================================================================== */
+:root {
+    --bg-main: #06090e;         /* Syvä tumma päätausta */
+    --panel-bg: rgba(22, 27, 34, 0.4); /* Läpinäkyvä lasiefekti (Glassmorphism) */
+    --panel-border: rgba(56, 139, 253, 0.25); /* Kyber-sininen reuna */
+    --text-neon: #58a6ff;       /* Päätehosteväri */
+    --text-bright: #f0f6fc;     /* Kirkas luettava teksti */
+    --text-muted: #8b949e;      /* Himmeämpi harmaa teksti */
+    --glow-effect: 0 0 15px rgba(88, 166, 255, 0.25);
+    --neon-green: #39d353;      /* Statusvalon vihreä */
+    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/* PERUSASETUKSET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--bg-main);
+    color: var(--text-bright);
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* SCI-FI TAUSTAGRAFIIKKA (PIIRILEVY / MATRIISI EFEKTI) */
+.cyber-grid-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-image: 
+        linear-gradient(rgba(13, 17, 23, 0.95) 0%, rgba(6, 9, 14, 0.98) 100%),
+        radial-gradient(rgba(88, 166, 255, 0.15) 1px, transparent 0),
+        linear-gradient(to right, rgba(56, 139, 253, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(56, 139, 253, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 20px 20px, 20px 20px;
+}
+
+/* ==========================================================================
+   2. OPERATOR HEADER & AVATAR RADAR
+   ========================================================================== */
+.cyber-header {
+    text-align: center;
+    padding: 4rem 2rem 2rem 2rem;
+    z-index: 10;
+}
+
+.avatar-wrapper {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 1.5rem auto;
+}
+
+.cyber-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--text-neon);
+    box-shadow: var(--glow-effect);
+    z-index: 2;
+    position: relative;
+}
+
+/* Pyörivä skanneri- / tutkakehä kuvan ympärille */
+.avatar-radar {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 1px solid rgba(88, 166, 255, 0.4);
+    border-radius: 50%;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    animation: spinRadar 4s linear infinite;
+    z-index: 1;
+}
+
+@keyframes spinRadar {
+    100% { transform: rotate(360deg); }
+}
+
+h1.glitch-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+    margin-bottom: 0.2rem;
+}
+
+.cyber-subtitle {
+    color: var(--text-neon);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    margin-bottom: 2rem;
+}
+
+/* NAVIGOINTIPALKKI (TERMINAALILITYYLIKÄS) */
+.cyber-nav {
+    display: inline-flex;
+    gap: 1.5rem;
+    background: rgba(22, 27, 34, 0.8);
+    padding: 0.6rem 1.5rem;
+    border-radius: 30px;
+    border: 1px solid var(--panel-border);
+}
+
+.nav-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--text-neon);
+    text-shadow: 0 0 8px var(--text-neon);
+}
+
+/* ==========================================================================
+   3. THE DASHBOARD GRID LAYOUT (JÄSENNYS)
+   ========================================================================== */
+.dashboard-grid {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    flex: 1;
+}
+
+/* LEVEÄT JA KORKEAT ELEMENTIT (DASHBOARD-LOGIIKKA) */
+.wide-card {
+    grid-column: span 2;
+}
+
+.tall-card {
+    grid-row: span 2;
+}
+
+/* TERMINAALI-IKKUNAT (KORTIT) */
+.cyber-card {
+    background: var(--panel-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--panel-border);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cyber-card:hover {
+    border-color: rgba(88, 166, 255, 0.6);
+    box-shadow: 0 0 20px rgba(88, 166, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+/* KORTIN YLÄREUNA (KÄYTTÖJÄRJESTELMÄN NÄKYMÄ) */
+.card-header {
+    background: rgba(22, 27, 34, 0.8);
+    padding: 0.8rem 1.2rem;
+    border-bottom: 1px solid var(--panel-border);
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Terminaalin ohjauspallot (minikuvakkeet vasemmalla) */
+.terminal-dots::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff5f56;
+    box-shadow: 14px 0 0 #ffbd2e, 28px 0 0 #27c93f;
+    margin-right: 45px;
+}
+
+.card-header h3 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--text-bright);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card-header h3 i {
+    color: var(--text-neon);
+}
+
+/* Sykkivä statusvalo oikealla */
+.status-pulse {
+    margin-left: auto;
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: var(--neon-green);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.status-pulse::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: var(--neon-green);
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulseGlow 1.8s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(57, 211, 83, 0.7); }
+    70% { box-shadow: 0 0 0 6px rgba(57, 211, 83, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(57, 211, 83, 0); }
+}
+
+/* KORTIN SISÄLTÖ */
+.card-body {
+    padding: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+.card-body p {
+    margin-bottom: 1rem;
+}
+
+.card-body p:last-child {
+    margin-bottom: 0;
+}
+
+.card-body strong {
+    color: var(--text-bright);
+    font-weight: 600;
+}
+
+/* LUVETTELUT (SKILLS) */
+.cyber-list {
+    list-style: none;
+}
+
+.cyber-list li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(48, 54, 61, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--text-bright);
+}
+
+.cyber-list li:last-child {
+    border-bottom: none;
+}
+
+.text-cyber {
+    color: var(--text-neon);
+}
+
+.compact-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.1rem;
+}
+
+.block-sub {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   4. TYÖKOKEMUKSEN TIMELINE-RAKENNE
+   ========================================================================== */
+.deployment-timeline {
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.deployment-timeline::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background: var(--panel-border);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-badge {
+    position: absolute;
+    left: -27px;
+    top: 0;
+    background: var(--bg-main);
+    border: 1px solid var(--text-neon);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    color: var(--text-neon);
+}
+
+.timeline-content h4 {
+    font-size: 1rem;
+    color: var(--text-bright);
+    font-weight: 600;
+}
+
+.cyber-date {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: var(--text-neon);
+    font-family: monospace;
+    margin-bottom: 0.4rem;
+}
+
+/* ==========================================================================
+   5. EDISTYMISPALKIT (PROGRESS BARS FOR TRACKS)
+   ========================================================================== */
+.progress-container {
+    margin-bottom: 1.2rem;
+}
+
+.progress-container:last-child {
+    margin-bottom: 0;
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-bright);
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+}
+
+.progress-percent {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: var(--text-neon);
+}
+
+.progress-bar-bg {
+    background: #21262d;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.progress-fill {
+    height: 100%;
+    background-image: linear-gradient(90deg, #1f6feb, var(--text-neon));
+    box-shadow: 0 0 8px var(--text-neon);
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   6. LINKKI- JA PAINIKEKESKUS (CONNECTIVITY HUB)
+   ========================================================================== */
+.connection-hub {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    height: 100%;
+    justify-content: center;
+}
+
+.cyber-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 0.8rem;
+    background: rgba(33, 38, 45, 0.7);
+    border: 1px solid var(--panel-border);
+    border-radius: 6px;
+    color: var(--text-bright);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.cyber-btn:hover {
+    background: var(--text-neon);
+    color: var(--bg-main);
+    border-color: var(--text-neon);
+    box-shadow: 0 0 15px rgba(88, 166, 255, 0.4);
+    transform: scale(1.01);
+}
+
+/* ==========================================================================
+   7. FOOTER JA RESPONSIVISUUS (MOBIILI)
+   ========================================================================== */
+.cyber-footer {
+    text-align: center;
+    padding: 2.5rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--panel-border);
+    background: rgba(13, 17, 23, 0.6);
+    margin-top: auto;
+}
+
+/* MOBIILILAITTEET (TABLETIT JA PUHELIMET) */
+@media (max-width: 850px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr; /* Muutetaan yhdeksi sarakkeeksi */
+    }
+    
+    .wide-card, .tall-card {
+        grid-column: auto;
+        grid-row: auto;
+    }
+    
+    h1.glitch-title {
+        font-size: 2.2rem;
+    }
+    
+    .cyber-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+}
