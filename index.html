@@ -29,67 +29,98 @@
             padding: 30px;
             margin: 20px auto;
             max-width: 500px;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border-radius: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahel Karim | DevSecOps & Cloud Security</title>
+    <style>
+        :root {
+            --bg: #050505;
+            --card-bg: #0d1117;
+            --primary: #38bdf8;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --border: #1e293b;
         }
 
-        h2 {
-            color: #38bdf8;
-            border-bottom: 2px solid #38bdf8;
-            display: inline-block;
-            padding-bottom: 5px;
-            margin-top: 0;
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Inter, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
         }
 
-        a {
-            color: #38bdf8;
-            text-decoration: none;
-            font-weight: bold;
-            display: block;
-            margin: 10px 0;
-            transition: color 0.3s;
-        }
+        .container { max-width: 500px; width: 100%; }
 
-        a:hover {
-            color: #bae6fd;
-        }
+        header { text-align: center; margin-bottom: 40px; }
 
-        p {
-            line-height: 1.6;
-            color: #e2e8f0;
+        /* Profiilikuvan tyyli */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
         }
+        
+        h1 { font-size: 2.2rem; margin: 0; color: #fff; }
+        .subtitle { color: var(--primary); font-weight: 600; margin-top: 5px; text-transform: uppercase; font-size: 0.9rem; }
+
+        .tag-cloud { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 20px; }
+        .tag { background: rgba(56, 189, 248, 0.08); color: var(--primary); padding: 5px 12px; border-radius: 4px; font-size: 0.75rem; border: 1px solid var(--border); }
+
+        .card { background: var(--card-bg); padding: 30px; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 20px; }
+        h2 { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; margin: 0 0 15px 0; }
+        p { color: var(--text-muted); line-height: 1.6; }
+
+        .btn {
+            display: block; color: var(--text); text-decoration: none; padding: 14px;
+            border: 1px solid var(--border); border-radius: 6px; margin-top: 12px;
+            text-align: center; font-size: 0.9rem; transition: 0.2s;
+        }
+        .btn:hover { border-color: var(--primary); background: rgba(56, 189, 248, 0.05); color: var(--primary); }
     </style>
 </head>
 <body>
 
-    <h1>Rahel Karim</h1>
-    <p class="subtitle">IT Student | Cloud | Cybersecurity | DevSecOps</p>
+<div class="container">
+    <header>
+        <img src="Assets/profile.jpg" alt="Rahel Karim" class="profile-img">
+        <h1>Rahel Karim</h1>
+        <p class="subtitle">ICT Student | DevSecOps & Cloud Security</p>
+        <div class="tag-cloud">
+            <span class="tag">Linux Administration</span>
+            <span class="tag">Cloud Infrastructure</span>
+            <span class="tag">Cybersecurity</span>
+        </div>
+    </header>
 
-    <!-- Projektit -->
-    <div class="box">
-        <h2>Projektit</h2>
-        <p><a href="#">Python Calculator</a></p>
-        <p><a href="#">To-Do App</a></p>
-    </div>
+    <section class="card">
+        <h2>About Me</h2>
+        <p>I am an ICT student at <strong>Taitotalo</strong>, building expertise in <strong>Linux system administration</strong>, <strong>cloud environments</strong>, and <strong>cybersecurity</strong>.</p>
+        <p>My goal is to pursue a career in <strong>DevSecOps</strong>, applying automated security and modern infrastructure practices.</p>
+    </section>
 
-    <!-- Tietoa minusta -->
-    <div class="box">
-        <h2>Tietoa minusta</h2>
-        <p>
-            Opiskelen ICT-alalla ja rakennan osaamistani ohjelmoinnissa, pilvipalveluissa ja kyberturvallisuudessa. 
-            Tavoitteenani on työskennellä DevSecOps-insinöörinä modernien pilviteknologioiden parissa.
-        </p>
-    </div>
+    <section class="card">
+        <h2>Projects</h2>
+        <a href="https://github.com/rahelkarim07-ux" class="btn" target="_blank">View GitHub Repository</a>
+    </section>
 
-    <!-- Yhteystiedot -->
-    <div class="box">
-        <h2>Yhteystiedot</h2>
-        <a href="mailto:rahel.karim7@yahoo.fi">Email: rahel.karim7@yahoo.fi</a>
-        <a href="https://www.linkedin.com/in/rahel-k-11b4a2359/" target="_blank">LinkedIn</a>
-        <a href="https://github.com/rahelkarim07-ux" target="_blank">GitHub</a>
-    </div>
-
-    <p style="margin-top: 40px; color: #64748b;">Lisää sisältöä tulossa pian</p>
+    <section class="card">
+        <h2>Connect</h2>
+        <a href="mailto:rahel.karim7@yahoo.fi" class="btn">Email: rahel.karim7@yahoo.fi</a>
+        <a href="https://www.linkedin.com/in/rahel-k-11b4a2359/" class="btn" target="_blank">LinkedIn Profile</a>
+    </section>
+</div>
 
 </body>
 </html>
