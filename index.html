@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +15,9 @@
             --border: #1e293b;
         }
 
-        * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'Segoe UI', Inter, system-ui, sans-serif;
@@ -25,11 +28,18 @@
             display: flex;
             justify-content: center;
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
-        .container { max-width: 500px; width: 100%; }
+        .container {
+            max-width: 500px;
+            width: 100%;
+        }
 
-        header { text-align: center; margin-bottom: 50px; }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
         .profile-img {
             width: 150px;
@@ -40,34 +50,39 @@
             margin-bottom: 25px;
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
         }
-        
-        h1 { font-size: 2.5rem; margin: 0; color: #fff; letter-spacing: -1px; }
 
-        .subtitle { 
-            color: var(--primary); 
-            font-weight: 600; 
-            letter-spacing: 1px; 
-            margin-top: 5px; 
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            color: #fff;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            color: var(--primary);
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-top: 5px;
             text-transform: uppercase;
             font-size: 0.9rem;
         }
 
-        .tag-cloud { 
-            display: flex; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-            gap: 10px; 
-            margin-top: 20px; 
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
         }
 
-        .tag { 
-            background: rgba(56, 189, 248, 0.08); 
-            color: var(--primary); 
-            padding: 5px 14px; 
-            border-radius: 4px; 
-            font-size: 0.75rem; 
-            text-transform: uppercase;
-            border: 1px solid var(--border);
+        .nav-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            border-bottom: 1px solid transparent;
+        }
+
+        .nav-links a:hover {
+            border-bottom: 1px solid var(--primary);
         }
 
         .card {
@@ -78,15 +93,50 @@
             margin-bottom: 20px;
         }
 
-        h2 { 
-            font-size: 0.8rem; 
-            color: var(--text-muted); 
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-            margin: 0 0 15px 0; 
+        h2 {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0 0 15px 0;
         }
 
-        p { color: var(--text-muted); }
+        h3 {
+            font-size: 1rem;
+            color: var(--text);
+            margin: 15px 0 2px 0;
+        }
+
+        .job-meta {
+            font-size: 0.85rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 0 0 10px 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            color: var(--text);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        li::before {
+            content: "▹";
+            color: var(--primary);
+            margin-right: 10px;
+        }
 
         .btn {
             display: block;
@@ -101,44 +151,89 @@
             transition: 0.2s;
         }
 
-        .btn:hover { 
-            border-color: var(--primary); 
-            background: rgba(56, 189, 248, 0.05); 
+        .btn:hover {
+            border-color: var(--primary);
+            background: rgba(56, 189, 248, 0.05);
             color: var(--primary);
         }
     </style>
 </head>
+
 <body>
 
-<div class="container">
-    <header>
-        <img src="Assets/profile.jpg.png" alt="Rahel Karim" class="profile-img">
-        <h1>Rahel Karim</h1>
-        <p class="subtitle">ICT Student | DevSecOps & Cloud Security</p>
-        <div class="tag-cloud">
-            <span class="tag">Linux Administration</span>
-            <span class="tag">Cloud Infrastructure</span>
-            <span class="tag">Cybersecurity</span>
-        </div>
-    </header>
+    <div class="container">
+        <header>
+            <img src="./Assets/profile.png" alt="Rahel Karim" class="profile-img">
+            <h1>Rahel Karim</h1>
+            <p class="subtitle">ICT & Engineering Student | DevSecOps & Cloud Security</p>
 
-    <section class="card">
-        <h2>About Me</h2>
-        <p>I am an ICT student at <strong>Taitotalo</strong>, currently building my expertise in <strong>Linux system administration</strong>, <strong>cloud environments</strong>, and <strong>cybersecurity</strong>.</p>
-        <p>My goal is to pursue a career in <strong>DevSecOps</strong>, where I can apply automated security practices and modern infrastructure management in complex cloud environments.</p>
-    </section>
+            <div class="nav-links">
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#certs">Certifications</a>
+            </div>
+        </header>
 
-    <section class="card">
-        <h2>Projects</h2>
-        <a href="https://github.com/rahelkarim07-ux" class="btn" target="_blank">View GitHub Repository</a>
-    </section>
+        <section class="card">
+            <h2>About</h2>
+            <p>Technology and mechanics enthusiast. Currently studying to become an engineer at
+                <strong>Metropolia</strong> via the open path, focusing on <strong>IoT</strong>,
+                <strong>cybersecurity</strong>, and <strong>cloud services</strong>, while simultaneously advancing ICT
+                studies at <strong>Taitotalo</strong>.</p>
+            <p>With a background in automotive electronics and workshop leadership, I have developed a sharp analytical
+                eye for complex problem-solving and process optimization in highly technical environments.</p>
+        </section>
 
-    <section class="card">
-        <h2>Connect</h2>
-        <a href="mailto:rahel.karim7@yahoo.fi" class="btn">Email: rahel.karim7@yahoo.fi</a>
-        <a href="https://www.linkedin.com/in/rahel-k-11b4a2359/" class="btn" target="_blank">LinkedIn Profile</a>
-    </section>
-</div>
+        <section class="card" id="experience">
+            <h2>Work Experience</h2>
+
+            <h3>Entrepreneur, Autominttiin Service Oy</h3>
+            <div class="job-meta">2024 – Present</div>
+            <p>Automotive electronics expert, specialized in system programming and performance-oriented technical
+                solutions.</p>
+
+            <h3>Workshop Supervisor</h3>
+            <div class="job-meta">2021 – 2024</div>
+            <p>Managed daily workshop operations, team leadership, diagnostics, and B2B-level service history
+                documentation.</p>
+
+            <h3>Parts Specialist, Rk varaosat</h3>
+            <div class="job-meta">2018 – 2021</div>
+        </section>
+
+        <section class="card" id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Linux System Admin (Kali, Ubuntu)</li>
+                <li>Cloud (AWS, Azure)</li>
+                <li>IoT Systems & Cyber Security</li>
+                <li>Python Automation & Shell Scripting</li>
+            </ul>
+        </section>
+
+        <section class="card" id="certs">
+            <h2>Certifications (Coming Soon)</h2>
+            <ul>
+                <li>CompTIA Security+</li>
+                <li>AWS Certified Cloud Practitioner</li>
+                <li>Azure Fundamentals (AZ-900)</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Education</h2>
+            <p><strong>Engineering (IoT/Cybersecurity)</strong> | Metropolia UAS</p>
+            <p><strong>ICT Studies</strong> | Taitotalo</p>
+            <p><strong>Upper Secondary School (Lukio)</strong></p>
+        </section>
+
+        <section class="card">
+            <h2>Projects & Connect</h2>
+            <a href="https://github.com/rahelkarim07-ux" class="btn" target="_blank">GitHub Repository</a>
+            <a href="https://www.linkedin.com/in/rahel-k-11b4a2359/" class="btn" target="_blank">LinkedIn Profile</a>
+        </section>
+    </div>
 
 </body>
+
 </html>
