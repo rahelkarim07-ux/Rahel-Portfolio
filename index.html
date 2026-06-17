@@ -1,35 +1,4 @@
 <!DOCTYPE html>
-<html lang="fi">
-<head>
-    <meta charset="UTF-8">
-    <title>Rahel Karim Portfolio</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #0f172a;
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-            margin: 0;
-        }
-
-        h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            color: #94a3b8;
-            margin-bottom: 40px;
-            font-size: 1.2rem;
-        }
-
-        .box {
-            background: #1e293b;
-            padding: 30px;
-            margin: 20px auto;
-            max-width: 500px;
-            border-radius: <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -48,53 +17,102 @@
         * { box-sizing: border-box; }
 
         body {
-            font-family: 'Segoe UI', Inter, sans-serif;
+            font-family: 'Segoe UI', Inter, system-ui, sans-serif;
             background-color: var(--bg);
             color: var(--text);
             margin: 0;
-            padding: 40px 20px;
+            padding: 60px 20px;
             display: flex;
             justify-content: center;
+            line-height: 1.6;
         }
 
         .container { max-width: 500px; width: 100%; }
 
-        header { text-align: center; margin-bottom: 40px; }
+        header { text-align: center; margin-bottom: 50px; }
 
-        /* Profiilikuvan tyyli */
         .profile-img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             border: 3px solid var(--primary);
             object-fit: cover;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
         }
         
-        h1 { font-size: 2.2rem; margin: 0; color: #fff; }
-        .subtitle { color: var(--primary); font-weight: 600; margin-top: 5px; text-transform: uppercase; font-size: 0.9rem; }
+        h1 { font-size: 2.5rem; margin: 0; color: #fff; letter-spacing: -1px; }
 
-        .tag-cloud { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 20px; }
-        .tag { background: rgba(56, 189, 248, 0.08); color: var(--primary); padding: 5px 12px; border-radius: 4px; font-size: 0.75rem; border: 1px solid var(--border); }
+        .subtitle { 
+            color: var(--primary); 
+            font-weight: 600; 
+            letter-spacing: 1px; 
+            margin-top: 5px; 
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
 
-        .card { background: var(--card-bg); padding: 30px; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 20px; }
-        h2 { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; margin: 0 0 15px 0; }
-        p { color: var(--text-muted); line-height: 1.6; }
+        .tag-cloud { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 10px; 
+            margin-top: 20px; 
+        }
+
+        .tag { 
+            background: rgba(56, 189, 248, 0.08); 
+            color: var(--primary); 
+            padding: 5px 14px; 
+            border-radius: 4px; 
+            font-size: 0.75rem; 
+            text-transform: uppercase;
+            border: 1px solid var(--border);
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+
+        h2 { 
+            font-size: 0.8rem; 
+            color: var(--text-muted); 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            margin: 0 0 15px 0; 
+        }
+
+        p { color: var(--text-muted); }
 
         .btn {
-            display: block; color: var(--text); text-decoration: none; padding: 14px;
-            border: 1px solid var(--border); border-radius: 6px; margin-top: 12px;
-            text-align: center; font-size: 0.9rem; transition: 0.2s;
+            display: block;
+            color: var(--text);
+            text-decoration: none;
+            padding: 14px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            margin-top: 12px;
+            text-align: center;
+            font-size: 0.9rem;
+            transition: 0.2s;
         }
-        .btn:hover { border-color: var(--primary); background: rgba(56, 189, 248, 0.05); color: var(--primary); }
+
+        .btn:hover { 
+            border-color: var(--primary); 
+            background: rgba(56, 189, 248, 0.05); 
+            color: var(--primary);
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <img src="Assets/profile.jpg" alt="Rahel Karim" class="profile-img">
+        <img src="Assets/profile.jpg.png" alt="Rahel Karim" class="profile-img">
         <h1>Rahel Karim</h1>
         <p class="subtitle">ICT Student | DevSecOps & Cloud Security</p>
         <div class="tag-cloud">
@@ -106,8 +124,8 @@
 
     <section class="card">
         <h2>About Me</h2>
-        <p>I am an ICT student at <strong>Taitotalo</strong>, building expertise in <strong>Linux system administration</strong>, <strong>cloud environments</strong>, and <strong>cybersecurity</strong>.</p>
-        <p>My goal is to pursue a career in <strong>DevSecOps</strong>, applying automated security and modern infrastructure practices.</p>
+        <p>I am an ICT student at <strong>Taitotalo</strong>, currently building my expertise in <strong>Linux system administration</strong>, <strong>cloud environments</strong>, and <strong>cybersecurity</strong>.</p>
+        <p>My goal is to pursue a career in <strong>DevSecOps</strong>, where I can apply automated security practices and modern infrastructure management in complex cloud environments.</p>
     </section>
 
     <section class="card">
