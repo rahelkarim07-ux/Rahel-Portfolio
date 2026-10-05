@@ -1,26 +1,48 @@
 # Rahel Karim — DevSecOps Portfolio
 
-This repository contains my early projects as I build my skills in programming, cloud, and cybersecurity.
+This repository contains my projects and learning path as I develop my skills in software development, cloud infrastructure, and cybersecurity.
 
-## Projects
+🔗 **Live Portfolio:** [rahelkarim07-ux.github.io/Rahel-Portfolio](https://rahelkarim07-ux.github.io/Rahel-Portfolio/)
 
-### Python Calculator
-A simple calculator built with Python to practice functions and logic.
+---
 
-### To-Do CLI App
-A command-line application for managing tasks using Python.
+## 📌 Sisällysluettelo
+- [Projektitiedostot ja sovellukset](#-projektitiedostot-ja-sovellukset)
+- [Arkkitehtuuri & UML-kaaviot](#-arkkitehtuuri--uml-kaaviot)
+- [Aikataulutus ja sprintit](#-aikataulutus-ja-sprintit)
+- [Testaussuunnitelma ja laatu](#-testaussuunnitelma-ja-laatu)
+- [Käyttöönotto](#-käyttöönotto)
+- [About Me](#-about-me)
 
-### Portfolio Website
-A basic HTML portfolio page showcasing my projects and progress.
+---
 
-## About Me
+## 📂 Projektitiedostot ja sovellukset
 
-I am an IT student focusing on cloud, cybersecurity, and DevSecOps.  
-My goal is to become a DevSecOps engineer and work with modern cloud technologies.
+* **Portfolio Website (`index.html`, `style.css`):**
+  * Moderni, responsiivinen verkkosivusto, joka esittelee projektit ja osaamisalueet.
+* **Python Calculator (`calculator.py`):**
+  * Toiminnallinen laskin komentoriville peruslaskutoimituksiin ja virheenkäsittelyyn.
+* **To-Do CLI App (`todo.py`):**
+  * Tehtävienhallintatyökalu tehtävien lisäämiseen, suorittamiseen ja seurantaan.
 
-## Next Steps
+---
 
-- Add more Python automation scripts  
-- Learn AWS & Azure  
-- Build cybersecurity tools  
-- Deploy projects to the cloud
+## 📐 Arkkitehtuuri & UML-kaaviot
+Projektin rakenne ja logiikka on mallinnettu UML-kaavioilla (luokkakaavio, sekvenssikaavio ja komponenttikaavio).  
+👉 **[Lue täysi UML-dokumentaatio täältä](uml_kaavio.md)**
+
+## 📅 Aikataulutus ja sprintit
+Kehitystyö on jaettu vaiheittaisiin sprintteihin vaatimusmäärittelystä testaukseen ja julkaisuun.  
+👉 **[Katso projektin aikataulu ja vaiheet](aikataulutus.md)**
+
+## 🧪 Testaussuunnitelma ja laatu
+Kaikki sovellukset ja verkkokomponentit on testattu erillisen testausmatriisin mukaisesti.  
+👉 **[Tutustu testaussuunnitelmaan ja testituloksiin](testaussuunnitelma.md)**
+
+---
+
+## 💻 Käyttöönotto
+
+1. Kloonaa repositorio:
+   ```bash
+   git clone [https://github.com/rahelkarim07-ux/Rahel-Portfolio.git](https://github.com/rahelkarim07-ux/Rahel-Portfolio.git)
